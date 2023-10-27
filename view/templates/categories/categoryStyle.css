@@ -1,0 +1,58 @@
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10%;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+}
+
+.product-container p {
+  align-self: flex-start;
+}
+
+.product-image {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.product-image:before {
+  width: 100%;
+  height: 100%;
+  background-color: #dfdfdf;
+  border: 1px dashed grey;
+  box-shadow: 0 0 0 0.45em #dfdfdf;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-size: 0.9em;
+  white-space: pre;
+  content: "\01F480 \A" attr(alt) " is broken!"
+}
+
+.btn-buy {
+  width: fit-content;
+  align-self: center;
+  background-color: red;
+  color: seashell;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #56070c;
+  margin-top: 10px;
+  padding: 7px;
+  transition: all 0.4s ease-out;
+}
+
+.btn-buy:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px red;
+  transform: scale(1.1);
+}
+
