@@ -1,50 +1,95 @@
-class User {
-    #userId;
-    #username;
-    #password;
-    #addresses;
-    #cart;
-    #purchases;
+import {UserRepositoryManager} from "./UserRepositoryManager.js";
 
-     constructor(username,
-                password, 
-                addresses=[],
-                cart=[]){
-      this.#username = username;
-      this.#password = password;
-      this.#cart = cart;
-      this.#addresses = addresses;
+export class User {
+
+  constructor(id, username, email, password,
+              addresses=[], cart=[], purchases=[], active) {
+    if (typeof(id) === "object" && id !== null) {
+      try {
+        this.id = id.getId();
+        this.username = id.getUsername();
+        this.email = id.getEmail();
+        this.password = id.getPassword();
+        this.cart = id.getCart();
+        this.addresses = id.getAddressList();
+        this.purchases = id.getPurchases();
+        this.active = true;
+      } catch(e) {
+        console.log(e);
+      }
+    } else if (username) {
+      this.id = (id) ? id : null;
+      this.username = username;
+      this.email = (email) ? email : null;
+      this.password = (password) ? password : null;
+      this.cart = (cart) ? cart : [];
+      this.addresses = (addresses) ? addresses : [];
+      this.purchases = (purchases) ? purchases : [];
+      this.active = (true) ? active : true;
+    } else {
+      console.log("Parâmetro ausente")
+      return null;
     }
+  }
 
-     saveUser() {
-      //TODO: escrever no UserRepository
+
+  signIn() {
+    localStorage["user"] = JSON.stringify(this);
+  }
+
+  logout() {
+    localstorage.removeItem("user");
+  }
+
+  async saveUserIfNotExists() {
+    let isSaved = await UserRepositoryManager.addUser(this);
+    return isSaved;
+  }
+
+  async saveUser() {
+    let isSaved = true;
+    let force = !(await UserRepositoryManager.addUser(this));
+    if (force) {
+      await UserRepositoryManager.updateUser(this);
     }
+  }
 
-     getUserId() {return this.#userId;}
+  addProductToCart(product) {
+    this.cart.push(product);
+  }
+  removeProductFromCart(product) {
+    return this.cart.filter(item => item != product);
+  }
 
-     getUsername() {return this.#username;}
-     setUsername(newUsername) {
-      this.#username = newUsername;
-    }
+  isActive() {return this.active}
 
-     getPassword() {return this.#password;}
-     setPassword(newPassword) {
-      this.#password = newPassword;
-    }
+  deactivate() {
+    this.active = false;
+    UserRepositoryManager.updateUser(this);
+  }
 
-     getAddressList () {return this.#addresses;}
-     getAddress(index) {return this.#addresses[index];}
-     addAddress(address) {this.#addresses.push(address);}
+  getId() {return this.id;}
 
-     getCart() {return this.#cart;}
-     addProductToCart(product) {
-      this.#cart.push(product);
-    }
-     removeProductFromCart(product) {
-      return this.#cart.filter(item => item != product);
-    }
+  getUsername() {return this.username;}
+  setUsername(newUsername) {
+    this.username = newUsername;
+  }
 
-     buyCart() {
-      //TODO: iniciar processo de compra dos produtos no carrinho
-    }
+  getPassword() {return this.password;}
+  setPassword(newPassword) {
+    this.password = newPassword;
+  }
+
+  getEmail() {return this.email;}
+  setEmail(newEmail) {this.email = newEmail;}
+
+  getPurchases() {return this.purchases;}
+  buyCart(cart) {this.purchases.push(cart);}
+
+  getAddressList() {return this.addresses;}
+  getAddress(index) {return this.addresses[index];}
+  addAddress(address) {this.addresses.push(address);}
+
+  getCart() {return this.cart;}
+
 }

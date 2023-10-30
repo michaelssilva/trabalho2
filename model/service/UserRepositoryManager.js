@@ -1,4 +1,4 @@
-static class UserRepositoryManager {
+class UserRepositoryManager {
   #userRepository;
 
   constructor (userRepositoryURL) {
@@ -7,7 +7,7 @@ static class UserRepositoryManager {
   }
 
   static loadRepository () {
-    
+    //TODO
   }
   
   static getUsers() {
