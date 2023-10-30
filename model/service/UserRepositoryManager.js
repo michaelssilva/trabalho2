@@ -1,4 +1,5 @@
-import {User} from "./User.js";
+import {User} from "../domain/User.js";
+
 
 export class UserRepositoryManager {
   static userRepository;
@@ -14,10 +15,11 @@ export class UserRepositoryManager {
           return data;
         }).catch(error => console.log(error));
       } else {
-        let defaultRepositoryURL = "./UserRepository.json";
-        this.userRepository = fetch(userRepositoryURL)
+        let defaultRepositoryURL = "model/repositories/UserRepository.json";
+        this.userRepository = fetch(defaultRepositoryURL)
           .then(response => response.json())
           .then(data => {
+						console.log(data);
             localStorage.setItem("userRepository", JSON.stringify(data));
             return data;
         }).catch(error => console.log(error))

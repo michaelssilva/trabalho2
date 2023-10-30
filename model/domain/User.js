@@ -1,4 +1,4 @@
-import {UserRepositoryManager} from "./UserRepositoryManager.js";
+import {UserRepositoryManager} from "../service/UserRepositoryManager.js";
 
 export class User {
 
