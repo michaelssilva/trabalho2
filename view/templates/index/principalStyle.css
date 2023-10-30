@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200&display=swap');
 
 :root {
   --primary-color: #0cf19d;
@@ -26,8 +27,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 100px;
-  transition: 0.5s linear;
+  padding: 0px 100px;
+  transition: 0.5s ease;
   background-color: white;
   font-family: 'Poppins', sans-serif;
   position: fixed;
@@ -35,24 +36,12 @@
 }
 
 
-/* Altura reduzida no menu após rolagem */
-.header.scroll {
-  height: 70px; 
-  padding: 10px 100px;
-  transition: top 0.3s ease;
-}
-
-#menu-header.scroll-menu {
-  top: 70px;
-  transition: top 0.3s ease;
-}
-
-
 .logo {
   display: flex;
+  padding: 0;
   align-items: center;
   font-size: 1rem;
-  font-weight: 600;
+  width:15px;
   column-gap: 0.2;
   color: black;
 }
@@ -126,7 +115,7 @@
     align-items: center;
     width: 100%;
     position: fixed;
-    top: 140px;
+    top: 100px;
   z-index: 9999;
 }
 
@@ -191,14 +180,150 @@
 }
 
 
+.user {
+  position: absolute;
+  right: 1rem;
+  top: 110%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5rem;
+  background: "";
+  padding: 20px;
+  border-radius: 0.5rem;
+  box-shadow: "";
+}
+
+.user h2{
+  font-size: 1.2rem;
+  color: black;
+}
+
+.user .login-btn {
+  background: "";
+  color: #4ba0ea;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.user .login-btn:hover {
+  background: yellow;
+}
+
+.user input {
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.user p {
+  font-size: '';
+}
+
+.user a {
+  text-decoration:underline;
+  color: #4ba0ea;
+}
+
+.user.active {
+  right: 1rem;
+  transition: 0.2s;
+  z-index: 10000000;
+}
+
 
 /* Estilização do Main */
 
 main {
   height: auto;
   position: relative;
+  top: 130px;
+
 }
 
+.banners-content {
+  background-color: #9b9b9b;
+  display: grid;
+  wrap: wrap;
+  position: relative;
+  padding-top: 30px;
+}
+
+.banner-category {
+  display: flex;
+  wrap: wrap;
+}
+
+.banner-category img {
+  padding: 0px 30px;
+  width: 800px;
+}
+
+.banner-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-text h2 {
+  font-size: 40px;
+  text-align: justify;
+  padding-top: 40px;
+}
+
+.banner-text p {
+  font-size: 25px;
+  padding: 20px;
+}
+
+.banner-anuncio {
+  position: relative;
+  width: 600px;
+  height: 250px;
+  background-color: #ebeff2;
+  top: -130px;
+  left: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-anuncio-fem {
+  position: relative;
+  top: -150px;
+  left: 150px;
+  width: 600px;
+  height: 250px;
+  background-color: #ebeff2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-anuncio:hover,
+.banner-anuncio-fem:hover {
+  transform: scale(110%);
+}
+
+.masrcas-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 150px;
+}
+
+.masrcas-content img {
+  width: 120px;
+}
+
+.masrcas-content img:hover {
+  transform: scale(110%);
+}
 
 
 /* Estilização do rodapé */
@@ -210,6 +335,9 @@ main {
   text-align: center;
   padding: 20px;
   background-color: #f0f0f0;
+  position: relative;
+  top: 130px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer-box {
@@ -262,12 +390,12 @@ main {
   text-decoration: none;
 }
 .footer-box li a:hover {
-  color: var(--terciary-color);;
+  color: var(--terciary-color);
 }
 .payment{
   display: flex;
   align-items: center;
-  column-gap: 00.5rem
+  column-gap: 0.5rem;
 }
 .payment img {
   width: 60px;
@@ -277,4 +405,6 @@ main {
   text-align: center;
   color: seashell;
   background-color: var(--terciary-color);
+  position: relative;
+  top: 130px;
 }

@@ -15,13 +15,11 @@ window.addEventListener("scroll", function() {
   }
 });
 
-window.addEventListener("scroll", function() {
-  var menuHeader = document.getElementById("menu-header");
-  var scrollPosition = window.scrollY;
 
-  if (scrollPosition > 50) {
-    menuHeader.classList.add("scroll-menu");
-  } else {
-    menuHeader.classList.remove("scroll-menu");
-  }
-});
+let user = document.querySelector('.user');
+
+document.querySelector('#user-icon').onclick = () =>{
+  user.classList.toggle('active');
+  search.classList.remove('active');
+  search.classList.remove('active');
+}
