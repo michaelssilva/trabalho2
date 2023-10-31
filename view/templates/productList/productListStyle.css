@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+
+*, *:before, *:after {
+	box-sizing:border-box;
+}
+
+main {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    width: auto;
+    padding: 50px 150px;
+}
+
+.product-table {
+	max-width: 1000px;
+	margin-right:auto;
+	margin-left:auto;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	min-height:100vh;
+}
+
+.product-image {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo para as linhas pares (background cinza) */
+tr:nth-child(even) {
+    background-color: #9b9b9b; /* ou qualquer outra cor de fundo cinza desejada */
+}
+
+  /* Estilo para as linhas ímpares (background branco, se não especificado, assume-se o fundo padrão da tabela) */
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* CSS */
+/* Alinhar o texto à esquerda nos elementos <th> */
+th {
+    text-align: left;
+    height: 100px;
+    font-size: 20px;
+  }
+  
+  /* Alinhar o texto à direita nos elementos <td> */
+  td {
+    text-align: center;
+  }
+  

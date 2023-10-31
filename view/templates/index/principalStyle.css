@@ -44,6 +44,8 @@
   width:15px;
   column-gap: 0.2;
   color: black;
+  width: 150px;
+  height: auto;
 }
 
 .navbar{
@@ -180,61 +182,6 @@
 }
 
 
-.user {
-  position: absolute;
-  right: 1rem;
-  top: 110%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 0.5rem;
-  background: "";
-  padding: 20px;
-  border-radius: 0.5rem;
-  box-shadow: "";
-}
-
-.user h2{
-  font-size: 1.2rem;
-  color: black;
-}
-
-.user .login-btn {
-  background: "";
-  color: #4ba0ea;
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.user .login-btn:hover {
-  background: yellow;
-}
-
-.user input {
-  border: none;
-  outline: none;
-  border-radius: 0.5rem;
-  width: 100%;
-}
-
-.user p {
-  font-size: '';
-}
-
-.user a {
-  text-decoration:underline;
-  color: #4ba0ea;
-}
-
-.user.active {
-  right: 1rem;
-  transition: 0.2s;
-  z-index: 10000000;
-}
-
-
 /* Estilização do Main */
 
 main {
@@ -327,17 +274,17 @@ main {
 
 
 /* Estilização do rodapé */
+
 .footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
   justify-content: center;
   text-align: center;
-  padding: 20px;
   background-color: #f0f0f0;
   position: relative;
-  top: 130px;
   font-family: 'Poppins', sans-serif;
+  padding-top: 20px;
 }
 
 .footer-box {
@@ -360,6 +307,7 @@ main {
 }
 
 .social {
+  
   display: flex;
   justify-content: center;
   gap: 0.5rem;
@@ -406,5 +354,4 @@ main {
   color: seashell;
   background-color: var(--terciary-color);
   position: relative;
-  top: 130px;
 }
