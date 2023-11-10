@@ -30,24 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-let loading = false;
-let page = 1;
-let pageSize = 10;
+let currentPage = 1;
+const pageSize = 20; // Limite o número de linhas a 20
 
-function loadProducts() {
-  if (loading) return;
-
-  loading = true;
-
+function loadProducts(page) {
   fetch(`/model/repositories/ProductRepository.json?page=${page}&pageSize=${pageSize}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Erro ao carregar os dados do servidor');
-      }
-      return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-      const tableBody = document.querySelector('#product-table tbody');
+      const tableBody = document.getElementById('table-body');
 
       data.forEach(product => {
         const row = document.createElement('tr');
@@ -55,7 +45,7 @@ function loadProducts() {
         // Adicionando classes aos elementos
         const imgCell = document.createElement('td');
         const img = document.createElement('img');
-        img.src = `/model/src/images/${product.watch_brand}/${product.image}`;
+        img.src = `/model/repositories/src/images/${product.watch_brand}/${product.image}`;
         img.alt = 'Imagem do Produto';
         img.classList.add('product-image'); // Adicionando a classe 'product-image' à imagem
         imgCell.appendChild(img);
@@ -90,22 +80,22 @@ function loadProducts() {
         tableBody.appendChild(row);
       });
 
-      loading = false;
-      page++;
+      // Se o número de itens recebidos for menor que o tamanho da página, esconda o botão "Carregar Mais"
+      if (data.length < pageSize) {
+        document.getElementById('load-more').style.display = 'none';
+      } else {
+        document.getElementById('load-more').style.display = 'block';
+      }
     })
     .catch(error => {
       console.error('Erro:', error);
-      loading = false;
     });
 }
 
-function handleScroll() {
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    loadProducts();
-  }
-}
+document.getElementById('load-more').addEventListener('click', () => {
+  currentPage++;
+  loadProducts(currentPage);
+});
 
-window.addEventListener('scroll', handleScroll);
-
-// Inicialmente, carregue os produtos
-loadProducts();
+// Inicialmente, carregue a primeira página ao iniciar a aplicação
+loadProducts(currentPage);

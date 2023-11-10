@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200&display=swap');
+
+main {
+  height: auto;
+  position: relative;
+  padding-bottom: 150px;
+}
+
+.main-conteiner{
+  display: flex;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 220px;
+  height: 400px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  text-align: center;
+}
+
+.card:hover {
+  border: solid 2px #4ba0ea;
+  transform: scale(1.1);
+}
+
+.filters {
+  max-width: 160px;
+  padding-left: 20px;
+}
+
+.filters h2 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.filters h3 {
+  text-align: center;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.filters a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: black;
+}
+
+.filters a:hover {
+  color: #4ba0ea;
+  cursor: pointer;
+}
+
+.filters input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #333;
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.filters input:checked {
+  background-color: #4ba0ea;
+}
+
+.filters ul li {
+  margin-bottom: 10px; /* Ajuste a margem conforme necessário */
+}
+
+.filters button{
+  padding: 10px;
+  margin-top: 20px;
+  position: relative;
+  left: 30px;
+  color: black;
+  background-color: #ccc;
+  border: none;
+}
+
+.filters button:hover {
+  color: #ccc;
+  background-color: #4ba0ea;
+  transform: scale(1.1);
+}
+
+#price-filter {
+  width: auto;
+  height: 40px;
+  text-align: center;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 100px;
+}
+
+.card-container img {
+  width: 200px;
+  padding-top: 10px;
+}
+
