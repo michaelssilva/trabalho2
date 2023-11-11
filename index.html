@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/view/templates/index/principalStyle.css">
+    <link rel="stylesheet" href="/view/templates/products/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>M & Z Store</title>
+    <link rel="icon" type="image/x-icon" href="/view/templates/index/images/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="/view/templates/index/slide.js" defer></script>
+    <script src="/view/templates/index/menu.js" defer></script>
+    <script src="products.js" defer></script>
+</head>
+  
+<body>
+
+  <div class="header-content">
+    <!-- Conteúdo do seu cabeçalho -->
+  </div>
+
+  <main>
+    <div class="main-conteiner">
+
+        <div class="filters">
+            <div class="filters-marca">
+                <h2>Filtrar por:</h2>
+
+                <h3>Marca</h3>
+
+                <ul>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Bovet</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Bvlgari</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Carl-F</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Graham</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Hublot</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">JacobCo</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Longines</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Luminox</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Maserati</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Omega</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Oris</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Rado</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Raymond Weil</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Seiko</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Tissot</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Tom Ford</label>
+                        </a>
+                    </li>
+                        
+                        
+                </ul>
+
+            </div>
+
+            <div class="filters-category">
+                    
+                <h3>Categorias</h3>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">De Luxo</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Premium</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Casual</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <input type="radio">
+                            <label for="category-filter">Sport</label>
+                        </a>
+                    </li>
+                            
+                </ul>
+                
+            </div>
+           
+
+            <div class="filters-price">
+                <h3>Preço até:</h3>
+                <input type="number" id="price-filter" placeholder="Preço máximo">
+            </div>
+                
+            <button id="apply-filters">Aplicar Filtros</button>
+        </div>
+
+        <!-- Fim dos Filtros -->
+
+
+        <!-- Cards Dinamicos -->
+    
+        <div class="card-container" id="card-container"></div>
+
+        <!-- Fim dos Cards Dinamicos -->
+
+    </div>
+
+
+    </div>
+
+    <div class="pagination">
+        <button   button id="prev-page">Página Anterior</button>
+        <span id="current-page">1</span>
+        <button id="next-page">Próxima Página</button>
+    </div>
+    
+  </main>
+ 
+  <div class="footer">
+    <!-- Conteúdo do seu rodapé -->
+  </div>
+
+</body>
+
+</html>
