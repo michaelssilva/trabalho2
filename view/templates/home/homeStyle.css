@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+main {
+    padding-bottom: 150px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.black-friday {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.category {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.category-box {
+    height: 60px;
+    width: 120px;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: gray;
+}
+
+.email-contant {
+    height: auto;
+    width: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.email-contant h2 {
+    padding: 10px;
+}
+
+.email-text {
+    display: flex;
+    gap: 5px;
+}
+
+.email-text input {
+    height: 50px;
+    width: 300px;
+    padding: 10px;
+}
+
+.email-text button {
+    height: 50px;
+    width: 60px;
+}
